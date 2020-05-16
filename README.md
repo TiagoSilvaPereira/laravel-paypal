@@ -250,6 +250,7 @@ $data['shipping_discount'] = round((10 / 100) * $total, 2);
     // Note that 'token', 'PayerID' are values returned by PayPal when it redirects to success page after successful verification of user's PayPal info.
     $response = $provider->doExpressCheckoutPayment($data, $token, $PayerID);
     ```
+**Warning** - you need to call doExpressCheckoutPayment to finish the payment, passing the same data you passed to setExpressCheckout. The provider currency needs to be the same for both steps. 
 
 <a name="usage-ec-refundtransaction"></a>
 * **RefundTransaction**
